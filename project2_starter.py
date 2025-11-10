@@ -76,7 +76,7 @@ class Character:
         2. Apply damage to the target
         3. Print what happened
         """
-         damage = self.strength // 2
+        damage = self.strength // 2
         target.take_damage(damage)
         print(f"{self.name} attacks {target.name} dealing {damage} damage!")          
         # TODO: Implement basic attack
