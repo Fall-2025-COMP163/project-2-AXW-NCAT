@@ -152,7 +152,7 @@ class Warrior(Player):
         """
         # TODO: Call super().__init__() with warrior-appropriate stats
         # Suggested stats: health=120, strength=15, magic=5
-        pass
+        
         
     def attack(self, target):
         """
@@ -162,7 +162,7 @@ class Warrior(Player):
         # TODO: Implement warrior attack
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
-        pass
+       
         
     def power_strike(self, target):
         """
@@ -170,7 +170,7 @@ class Warrior(Player):
         """
         # TODO: Implement power strike
         # Should do significantly more damage than regular attack
-        pass
+        
 
 class Mage(Player):
     """
@@ -219,27 +219,37 @@ class Rogue(Player):
         Create a rogue with appropriate stats.
         Rogues should have: medium health, medium strength, medium magic
         """
+        super().__init__(name, "Rogue", health = 90, strength = 12, magic = 10)
         # TODO: Call super().__init__() with rogue-appropriate stats
         # Suggested stats: health=90, strength=12, magic=10
-        pass
         
     def attack(self, target):
         """
         Override the basic attack to make it rogue-specific.
         Rogues should have a chance for extra damage (critical hits).
         """
+        result = random.randint(1, 10)
+        if result <= 4:
+            damage = (self.strength // 2) * 2
+            target.take_damage(damage)
+            print(f"{self.name} strikes a Critical Hit on {target.name} dealing {damage} damage!")
+        else:
+            damage = self.strength // 2
+            target.take_damage(damage)
+            print(f"{self.name} attacks {target.name} dealing {damage} damage!")
         # TODO: Implement rogue attack
         # Could add a chance for critical hit (double damage)
         # Hint: use random.randint(1, 10) and if result <= 3, it's a crit
-        pass
         
     def sneak_attack(self, target):
         """
         Special rogue ability - guaranteed critical hit.
         """
+        damage = (self.strength // 2) * 2
+        target.take_damage(damage)
+        print(f"{self.name} performs a Sneak Attack on {target.name} dealing {damage} damage!")
         # TODO: Implement sneak attack
         # Should always do critical damage
-        pass
 
 class Weapon:
     """
@@ -251,15 +261,17 @@ class Weapon:
         """
         Create a weapon with a name and damage bonus.
         """
+        self.name = name
+        self.damage_bonus = damage_bonus
         # TODO: Store weapon name and damage bonus
-        pass
+       
         
     def display_info(self):
         """
         Display information about this weapon.
         """
+        print(f"Weapon: {self.name}\n Damage Bonus {self.damage_bonus}")
         # TODO: Print weapon name and damage bonus
-        pass
 
 # ============================================================================
 # MAIN PROGRAM FOR TESTING (YOU CAN MODIFY THIS FOR TESTING)
