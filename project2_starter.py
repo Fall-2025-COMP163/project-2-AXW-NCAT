@@ -135,7 +135,7 @@ class Player(Character):
         """
         # TODO: Call the parent's display_stats method using super()
         # TODO: Then print additional player info like class and level
-        super().display_stats(self)
+        super().display_stats()
         print(f"Class: {self.character_class}")
         print(f"Level: {self.level}")
 
