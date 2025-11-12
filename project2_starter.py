@@ -175,7 +175,7 @@ class Warrior(Player):
         """
         Special warrior ability - a powerful attack that does extra damage.
         """
-        damage = (self.strength // 2) + 45
+        damage = (self.strength // 2) + 40
         target.take_damage(damage)
         print(f"{self.name} uses Power Strike on {target.name} dealing {damage} damage!")
         # TODO: Implement power strike
@@ -240,7 +240,7 @@ class Rogue(Player):
         """
         result = random.randint(1, 10)
         if result <= 4:
-            damage = (self.strength // 2) * 4
+            damage = (self.strength // 2) * 2
             target.take_damage(damage)
             print(f"{self.name} strikes a Critical Hit on {target.name} dealing {damage} damage!")
         else:
@@ -255,7 +255,7 @@ class Rogue(Player):
         """
         Special rogue ability - guaranteed critical hit.
         """
-        damage = (self.strength // 2) * 2
+        damage = (self.strength // 2) * 4
         target.take_damage(damage)
         print(f"{self.name} performs a Sneak Attack on {target.name} dealing {damage} damage!")
         # TODO: Implement sneak attack
