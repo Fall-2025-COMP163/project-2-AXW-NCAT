@@ -264,23 +264,18 @@ class Rogue(Player):
 
 class Alien(Player):
     """
-    Rogue class - quick and sneaky fighter.
+    Alien class - An out of this world fighter.
     Inherits from Player.
     """
     
     def __init__(self, name):
-        """
-        Create a rogue with appropriate stats.
-        Rogues should have: medium health, medium strength, medium magic
-        """
         super().__init__(name, character_class =  "Alien", health = 100, strength = 75, magic = 3)
         # TODO: Call super().__init__() with rogue-appropriate stats
         # Suggested stats: health=90, strength=12, magic=10
         
     def attack(self, target):
         """
-        Override the basic attack to make it rogue-specific.
-        Rogues should have a chance for extra damage (critical hits).
+        Override the basic attack to make it Alien-specific.
         """
         damage = (self.strength // 2) * 6
         target.take_damage(damage)
@@ -288,7 +283,7 @@ class Alien(Player):
         
     def secret_move(self, target):
         """
-        Special rogue ability - guaranteed critical hit.
+        Special Alien ability - chance for extra damage.
         """
         result = random.randint(1, 10)
         if result <= 4:
@@ -299,6 +294,21 @@ class Alien(Player):
             damage = self.strength // 6
             target.take_damage(damage)
             print(f"{self.name} attacks {target.name} dealing {damage} damage!")
+
+class Musique(Player):
+    def __init__(self, name):
+#Health, Strength numbers are based of how we can count in music
+        super().__init__(name, character_class =  "Musique", health = 44, strength = 68, magic = 24)
+# 3 Sections in the band
+    def attack(self, target):
+        damage = (self.strength // 2) * 3
+        target.take_damage(damage)
+        print(f"{self.name} fires a measure of notes at {target.name} dealing {damage} damage!")
+        
+    def petal(self, target):
+        damage = (self.strength // 2) * 5
+        target.take_damage(damage)
+        print(f"{self.name} plays a Petal Tone to deal {damage} damage to {target.name}!")
 
 class Weapon:
     """
