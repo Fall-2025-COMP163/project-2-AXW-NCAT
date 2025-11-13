@@ -1,0 +1,17 @@
+AI Assistance:
+For this project, AI maily helped me fix bugs. For example, I used AI to fix the methods of attack and take-damage inside the Character class. 
+t sI also used AI to help me with the correcyntax when using the super function to refer to a parent class. I was writing super without the parentheses which to python made it seam like it was it's onwn class when it wasn't. 
+Instead I had to add the parenthese to make it a function.
+
+How to test my code:
+To test my code you will create the varaibles char1 and char2. For those variables, you will assign each a Character Class, such as Warrior, Rougue, or Mage and the, heros name.
+After those variables are established, you will put those variables into the SimbpleBattle class as arguments. Then to see the battle occure, you will type out the fight method using dot notation.
+Ex. This is what a test run could look like:
+char1 = Rogue("Lewis")
+char2 = Mage("Gandalf")
+
+SimpleBattle(char1, char2).fight()
+
+Bonus Creative Feature:
+I added 2 more character classes to the mix. I added a class called Alein and one called Musical Demond.
+The differences with these character classes is their attack methods. For example the Alein has laser eyes as a standard attack. For the Alien's super attack, this chracter can set his opponents on fire dealing lots of damage.
