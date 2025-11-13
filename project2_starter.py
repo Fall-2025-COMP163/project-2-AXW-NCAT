@@ -69,7 +69,8 @@ class Character:
         self.health = health
         self.strength = strength
         self.magic = magic
-        
+
+# Used AI to help me fix the attack and the take-damage methods
     def attack(self, target):
         """
         Basic attack method that all characters can use.
@@ -85,7 +86,7 @@ class Character:
         # Damage should be based on self.strength
         # Use target.take_damage(damage) to apply damage
         
-        
+#AI helped me figure out how to reduce health and make sure it doesn't go below 0
     def take_damage(self, damage):
         """
         Reduces this character's health by the damage amount.
@@ -130,6 +131,7 @@ class Player(Character):
         self.character_class = character_class
         self.level = 3
         
+#I was calling super.(something) which is wrong because super isn't a class its function. I have to have parenthesis after it to call the parent class        
     def display_stats(self):
         """
         Override the parent's display_stats to show additional player info.
@@ -146,7 +148,7 @@ class Warrior(Player):
     Warrior class - strong physical fighter.
     Inherits from Player.
     """
-    
+# I used AI to help me fix my bug with the parent init method for the warrior class
     def __init__(self, name):
         """
         Create a warrior with appropriate stats.
@@ -171,7 +173,7 @@ class Warrior(Player):
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
        
-        
+# The power strike move is like the warriors super move that does extra damage. That is why I added 57 to the damage calculation.
     def power_strike(self, target):
         """
         Special warrior ability - a powerful attack that does extra damage.
@@ -304,7 +306,7 @@ class Musique(Player):
         damage = (self.strength // 2) * 3
         target.take_damage(damage)
         print(f"{self.name} fires a measure of notes at {target.name} dealing {damage} damage!")
-        
+
     def petal(self, target):
         damage = (self.strength // 2) * 5
         target.take_damage(damage)
