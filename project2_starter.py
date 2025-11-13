@@ -262,6 +262,44 @@ class Rogue(Player):
         # TODO: Implement sneak attack
         # Should always do critical damage
 
+class Alien(Player):
+    """
+    Rogue class - quick and sneaky fighter.
+    Inherits from Player.
+    """
+    
+    def __init__(self, name):
+        """
+        Create a rogue with appropriate stats.
+        Rogues should have: medium health, medium strength, medium magic
+        """
+        super().__init__(name, character_class =  "Alien", health = 100, strength = 75, magic = 3)
+        # TODO: Call super().__init__() with rogue-appropriate stats
+        # Suggested stats: health=90, strength=12, magic=10
+        
+    def attack(self, target):
+        """
+        Override the basic attack to make it rogue-specific.
+        Rogues should have a chance for extra damage (critical hits).
+        """
+        damage = (self.strength // 2) * 6
+        target.take_damage(damage)
+        print(f"{self.name} fires laser eyes at {target.name} dealing {damage} damage!")
+        
+    def secret_move(self, target):
+        """
+        Special rogue ability - guaranteed critical hit.
+        """
+        result = random.randint(1, 10)
+        if result <= 4:
+            damage = (self.strength // 2) * 4
+            target.take_damage(damage)
+            print(f"{self.name} sets {target.name} on filre dealing {damage} damage!")
+        else:
+            damage = self.strength // 6
+            target.take_damage(damage)
+            print(f"{self.name} attacks {target.name} dealing {damage} damage!")
+
 class Weapon:
     """
     Weapon class to demonstrate composition.
