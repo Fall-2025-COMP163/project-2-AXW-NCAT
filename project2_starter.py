@@ -4,7 +4,7 @@ COMP 163 - Project 2: Character Abilities Showcase
 Name: Aaron Williams
 Date: 11/9/25
 
-Kori Jackson
+
 AI Usage: [Document any AI assistance used]
 Example: AI helped with inheritance structure and method overriding concepts
 """
