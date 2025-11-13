@@ -1,0 +1,3 @@
+For this project, AI maily helped me fix bugs. For example, I used AI to fix the methods of attack and take-damage inside the Character class. 
+t sI also used AI to help me with the correcyntax when using the super function to refer to a parent class. I was writing super without the parentheses which to python made it seam like it was it's onwn class when it wasn't. 
+Instead I had to add the parenthese to make it a function.
